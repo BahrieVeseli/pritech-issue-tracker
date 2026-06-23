@@ -40,8 +40,7 @@ php artisan serve
 npm run dev
 ```
 
-```
 > **Important Note:**  
 > The **Delete** button for a project is only visible to the user who created that project.  
 > If the currently authenticated user is not the project owner, the delete option will not be displayed.
-```
+
