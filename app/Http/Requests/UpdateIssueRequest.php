@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateIssueRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     */
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'project_id' => ['required', 'exists:projects,id'],
+            'title' => ['required', 'string', 'max:255'],
+            'description' => ['nullable', 'string'],
+            'status' => ['required', 'in:open,in_progress,closed'],
+            'priority' => ['required', 'in:low,medium,high'],
+            'due_date' => ['nullable', 'date'],
+            'tag_ids' => ['sometimes', 'array'],
+            'tag_ids.*' => ['exists:tags,id'],
+            'member_ids' => ['sometimes', 'array'],
+            'member_ids.*' => ['exists:users,id'],
+        ];
+    }
+}
