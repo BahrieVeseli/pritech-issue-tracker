@@ -40,15 +40,3 @@ php artisan serve
 npm run dev
 ```
 
-## Demo users
-
-- `owner@example.com`
-- `member@example.com`
-
-Password for both seeded users: `password`
-
-## Notes
-
-- Use `owner@example.com` to test project ownership rules.
-- The seeded data is intentionally clean and demo-friendly.
-- Tests cover the main CRUD and AJAX flows.
